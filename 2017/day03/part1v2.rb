@@ -105,11 +105,3 @@ puts world.tile(1).distance
 puts world.tile(23).distance
 puts world.tile(1024).distance
 puts world.tile(368078).distance
-
-
-# puts(grid.steps_to(12) == 3)
-# puts(grid.steps_to(1) == 0)
-# puts(grid.steps_to(23) == 2)
-# puts(grid.steps_to(1024) == 31)
-#
-# #puts grid.steps_to(368078)
