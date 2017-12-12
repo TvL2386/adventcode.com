@@ -98,16 +98,7 @@ class World
     end
 
     def next_coordinates(direction)
-      case direction
-        when :right
-          return coordinates.right
-        when :up
-          return coordinates.up
-        when :left
-          return coordinates.left
-        when :down
-          return coordinates.down
-      end
+      coordinates.send(direction)
     end
 
     def coordinates
