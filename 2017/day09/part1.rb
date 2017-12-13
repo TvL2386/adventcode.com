@@ -3,9 +3,9 @@ module Day09
     def initialize(string, start_parsing=true, base_score=1)
       @string = string
       @base_score = base_score
-      # puts "> initializing group:"
-      # puts "> base score: #{base_score}"
-      # puts "> string: #{string.inspect}"
+      puts "> initializing group:"
+      puts "> base score: #{base_score}"
+      puts "> string: #{string.inspect}"
 
       @groups = []
 
@@ -13,7 +13,6 @@ module Day09
       # We are a group and don't need { ... }
       # surrounding us
 
-      # p string
       @chars = []
       if string.length > 0
         @chars = string.scan(/./)[1...-1]
@@ -88,21 +87,19 @@ module Day09
       "score: #{score} - sequence: #{@string.inspect}"
     end
   end
-
-  class Garbage
-
-  end
-
-
 end
 
-puts Day09::Group.new('{}').score == 1
-puts Day09::Group.new('{{{}}}').score == 6
-puts Day09::Group.new('{{},{}}').score == 5
-puts Day09::Group.new('{{{},{},{{}}}}').score == 16
-puts Day09::Group.new('{<a>,<a>,<a>,<a>}').score == 1
-puts Day09::Group.new('{{<ab>},{<ab>},{<ab>},{<ab>}}').score == 9
-puts Day09::Group.new('{{<!!>},{<!!>},{<!!>},{<!!>}}').score == 9
-puts Day09::Group.new('{{<a!>},{<a!>},{<a!>},{<ab>}}').score == 3
+# puts Day09::Group.new('{}').score == 1
+# puts Day09::Group.new('{{{}}}').score == 6
+# puts Day09::Group.new('{{},{}}').score == 5
+# puts Day09::Group.new('{{{},{},{{}}}}').score == 16
+# puts Day09::Group.new('{<a>,<a>,<a>,<a>}').score == 1
+# puts Day09::Group.new('{{<ab>},{<ab>},{<ab>},{<ab>}}').score == 9
+# puts Day09::Group.new('{{<!!>},{<!!>},{<!!>},{<!!>}}').score == 9
+# puts Day09::Group.new('{{<a!>},{<a!>},{<a!>},{<ab>}}').score == 3
+#
+# puts Day09::Group.new('{<a!!!!>}').score == 1
+# puts Day09::Group.new('{<a>,<a!>,<a>,<a>}').score == 1
+puts Day09::Group.new('{{<!>,<!>},<ieo!e>},{{<e!>,<''!>,<<ia!i>}}}').score == 8
 
 puts Day09::Group.new(File.read('input')).score
