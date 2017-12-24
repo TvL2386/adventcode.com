@@ -7,18 +7,15 @@ import (
 	"io/ioutil"
 )
 
-func readFile(file string) (string) {
-	data, error := ioutil.ReadFile(file)
+func main() {
+	data, error := ioutil.ReadFile("input")
+
 	if error != nil {
 		panic(error)
 	}
 
-	return string(data)
-}
-
-func main() {
+	input := string(data)
 	sum := 0
-	input := readFile("input")
 
 	chars := strings.Split(input, "")
 
