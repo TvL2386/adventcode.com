@@ -27,7 +27,6 @@ func (s *spreadsheetRow) result() int {
 	return 0
 }
 
-
 func main() {
 	data, error := ioutil.ReadFile("input")
 
